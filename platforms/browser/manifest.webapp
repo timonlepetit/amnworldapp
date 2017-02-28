@@ -1,0 +1,18 @@
+{
+<<<<<<< HEAD
+  "name": "Amn",
+  "description": "Amn technical application",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/favicon.png"
+=======
+  "name": "My App",
+  "description": "Description of your app",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/logo.png"
+>>>>>>> d66ab5bbd4e92560eb611affe0cdd7fd2f53e5ce
+  },
+  "default_locale": "en",
+  "type": "privileged"
+}

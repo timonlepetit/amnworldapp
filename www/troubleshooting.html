@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="Amn">
+    <meta name="application-name" content="Amn">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="css/application.css" />
+    <title>Amn App</title>
+</head>
+
+<body>
+<a id="toTop" href="#top">Top</a>
+
+<!-- navbar -->
+    <nav>
+        <ul>
+            <li><img id="brand" src="img/brand.png" alt="brand"></li>
+            <li><a href="index.html">home</a></li><span>/</span>
+            <li><a href="about.html">about</a></li><span>/</span>
+            <li><a href="mecanics.html">Technology & Products</a></li><span>/</span>
+            <li><a href="services.html">Services</a></li><span>/</span>
+            <li><a href="datasheets.html">Datasheets</a></li>
+        </ul>
+    </nav>
+
+<div class="wrapper_ts">
+    <h1>Troubleshooting</h1>
+<!-- Debut de la presentation TS -->
+<h4>CONTENTS</h4>
+I. Definition of a good pelletizing result.<br>
+<br>
+II. Cavitation<br>
+<br>
+<span class="anchors" id="top"></span>
+III. Pelletizing issues.
+<ul>
+    <li>A. <a href="#A">Big pellets</a></li>
+    <li>B. <a href="#B">Small pellets</a></li>
+    <li>C. <a href="#C">Conforming pellets with tails</a></li>
+    <li>D. <a href="#D">Conforming pellets with pellets stuck together (agglomerates)</a></li>
+    <li>E. <a href="#E">Conforming pellets with blocks</a></li>
+    <li>F. <a href="#F">Conforming pellets with mini pellets</a></li>
+    <li>G. <a href="#G">Conforming pellets with big pellets</a></li>
+    <li>H. <a href="#H">Strings of pellets</a></li>
+    <li>I. <a href="#I">Long pellets</a></li>
+    <li>J. <a href="#J">Long, flat and short pellets</a></li>
+    <li>K. <a href="#K">Bubbled pellets</a></li>
+    <li>L. <a href="#L">Powder formation (fines)</a></li>
+    <li>M. <a href="#M">Sudden loss of cutting ability</a></li>
+    <li>N. <a href="#N">Very long wires</a></li>
+    <li>O. <a href="#O">Melt fracture and shark skin</a></li>
+</ul>
+<h4>I. Definition of a good pelletizing result.</h4>
+In case no granulometric specification is established, a good pelletizing result can be defined as a long period of production without any shutdown due to the cutting system.<br>
+<br>
+If a granulometric specification exists, a good pelletizing result is defined as the production of pellets in accordance to this specification (limited amount of discrepant pellets, respect of defined pellet shape and size...).<br>
+<br>
+For example, a very well known pellet uniformity test is called the “delta weight” method and is performed as follows:<br>
+<br>
+<span><center>
+Number of pellets in 4 g x [(wt of 10 largest - wt of 10 smallest)] x 10<br>
+<hr style="width:30rem;">
+8</center></span><br>
+
+<center>
+10-25 % is excellent<br>
+26-40% is typical for PP<br>
+41-60% is poor<br>
+</center>
+<br>
+Of course the measurement must be made with a precision balance (0.1 mg).<br>
+Note: the pellet main size cannot be controlled if it varies of more than 60% throughout the production (which is the case when the die plate is plugged by frozen polymer).<br>
+<br>
+In the case of a die plate plugged by polymer, it is useful to be able to calculate the number of frozen holes with the following formula:<br>
+<br>
+<center>
+<table style="border-collapse:collapse;text-align:center;font-family:Arial,Times,serif;color:#D9534F;">
+        <tr>
+                <td rowspan="2" style="padding-right:5px;"># holes open =</td>
+                <td style="border-bottom:1px solid #ffffff;">1672000 x rate in t/h&sup2;</td>
+        </tr>
+        <tr>
+                <td>(g / 100 pellets) x ( number of knives) x (Cutter RPM)
+</td>
+        </tr>
+</table>
+</center>
+<br>
+<center><u>A typical calculation could be:</u></center><br>
+<span><center>[1672000 x 30] / [(2.6) x (30) x (550)] = 1169 holes open.</center></span><br>
+<br>
+Knowing the original number of holes in the die plate (1263 for instance), the % of open holes would then be = (1169/1263) x 100 = 92.5%<br>
+
+<h4>II. Cavitation</h4>
+Cavitation occurs when the PCW pressure or flow is too low in the water bowl, or when the knife rotation speed is too high.<br>
+The effect of cavitation can be very severe, as it attacks the metal by the creation of small vacuum areas in which the chemical reactions are very violent; this makes the cavitation damage look like very much as corrosion pitting.<br>
+This can be avoided by the modification of the PCW circuit setup, the addition of a restriction orifice at the top of the water bowl exit, of the wise choice of a knife model.<br>
+Refer to the attached PPT, at the end of this manual, for calculations and guideline for knife model choice.
+<br>
+<h4>II.Pelletizing issues</h4>
+
+<span class="anchors" id="A"></span>
+<h5>A. Big pellets.</h5>
+A big pellet stands for a pellet with diameter at least twice higher than the die plate production hole diameter.<br>
+<br>
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Plugged die plate</td>
+    <td>• Shutdown, purge, start-up again,<br><br>
+    • Refer to “Customer Process Data”
+    (section 5).</td>    
+  </tr>
+  <tr>
+    <td>Bad start-up procedure.
+    Frequently linked with a pressure increase after the filter</td>
+    <td>• Modification of start-up procedure,
+    <br><br>• Refer to “Customer Process Data”
+(section 5).</td>    
+  </tr>
+    <tr>
+    <td>Die plate fouling (by carbonized polymer)</td>
+    <td>• Die plate cleaning in oven, see AMN procedure 75.MOM.02</td> 
+     </tr>
+  </tr>
+    <tr>
+    <td>Too low or ineffective die plate heating. Frequently linked with a pressure increase after the filter</td>
+    <td> • Hot oil pump flow and temperature control or steam trap and steam pressure control, 
+    <br><br>
+    • If the oil pump is not dedicated to the die plate alone, there is a preferential flow pattern in the other extruder zones (die holder, screen-pack...).<br><br>
+    Try to redirect more hot oil to the die plate.</td>    
+  </tr>
+  </tr>
+    <tr>
+    <td>Preferential hot oil flow pattern inside the die plate.
+<br>Frequently linked with a pressure increase after the filter.</td>
+    <td>• Inadequate die plate design, consult AMN for a new die plate design,
+<br><br>• Die plate heating channels fouling, clean the heating channels (AMN procedure 75.MOM.01).</td>    
+  </tr>
+  </tr>
+    <tr>
+    <td>Low hot oil flow</td>
+    <td>• Inadequate die plate design, consult AMN for a new die plate design,
+    <br><br> • Inadequate die plate design, consult AMN for a new die plate design,
+    <br><br>• Check the tubing diameter (refer to “Customer Process Data”, section 3b).</td>    
+  </tr>
+  </tr>
+    <tr>
+    <td>Condensate accumulation in the die plate</td>
+    <td>• Steam trap control,<br><br>
+    • Inadequate outlet manifold design,
+    consult AMN for a new manifold design.</td>    
+  </tr>
+  </tr>
+    <tr>
+    <td>Too high polymer flow</td>
+    <td>• Reduction of polymer flow,<br><br>
+    • Undersized die plate, consult AMN for a
+    new die plate design.</td>    
+  </tr>
+</table>
+
+<span class="anchors" id="B"></span>
+<h5>B. Small pellets.</h5>
+A small pellet stands for a pellet with diameter smaller or equal to production hole diameter.<br>
+<br>
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Too high knife speed</td>
+    <td>• Reduction of rotation speed in accordance to AMN process guarantee (if any)</td>
+  </tr>
+  <tr>
+    <td>Too low polymer flow</td>
+    <td>• Increase of polymer flow in accordance to AMN process guarantee (if any)</td>    
+  </tr>
+    <tr>
+    <td>Oversized die plate</td>
+    <td>• Partial die plate production holes plugging, refer to AMN procedure 75.MOM.03</td>
+     </tr>
+  </tr>
+</table>
+<br>
+<p style="text-align:center;color:#999999;font-weight:700;">This issue is frequently linked with a low pressure at the back of the die plate.</p>
+
+<span class="anchors" id="C"></span>     
+<h5>C. Conforming pellets with tails (1/2).</h5>
+
+<div class="wrapper_video">
+  <img src="img/pellets/tail_pellets.jpg" alt="tail">
+</div>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Blunt knife blades</td>
+    <td>• Shutdown for knife grinding, refer to AMN procedure n° 19A_Rodage_Ctx_A</td>    
+  </tr>
+  <tr>
+    <td>Chipped out knife blades</td>
+    <td> • Knives replacement,<br><br>
+    • Check out for any foreign material
+    coming out of the die plate which may
+    have damaged the blades,<br><br>
+    • Check out for any rising nib or tile on
+    the die plate cutting face and send the die plate to AMN for expertise and maintenance.</td>    
+  </tr>
+  <tr>
+    <td>Bended knives</td>
+    <td>• Knives replacement,<br><br>
+    • Check for knife alignment, refer to AMN
+    Instruction Manual (section I.7),<br><br>
+    • Reduce forward pressure, OR<br><br>
+    • Consult AMN for SBX5 or SMX5 knife
+    design.</td>
+     </tr>
+  </tr>
+    <tr>
+    <td>Knife-holder geometry</td>
+    <td>• Check for knife-holder geometry, refer to AMN Instruction Manual (section I.7).</td>
+     </tr>
+  </tr>
+    <tr>
+    <td>Defective knife-holder hub (self-aligning system malfunction)</td>
+    <td>• Check the integrity of rubber bushing knife-holder and replace if necessary,<br><br>
+    • Send ACE hub to AMN for expertise and maintenance</td>
+     </tr>
+  </tr>
+    <tr>
+    <td>Pelletizer shaft misalignment</td>
+    <td>• Check pelletizer shaft alignment and integrity and repair if necessary (refer to AMN Instruction Manual section I.4).</td>
+     </tr>
+  </tr>
+</table>
+<br>
+<h5>C. Conforming pellets with tails (2/2)</h5>
+
+<div class="wrapper_video">
+<img src="img/pellets/tct_animat.gif" alt="test">
+</div>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Lack of PCW around the cutting face and knives</td>
+    <td>• Decrease knife rotation speed (according to recommended maximum knife tip linear speed) and increase water pressure in the water bowl (minimum 2 bar),<br><br>
+    • Consult AMN about CIS device</td>    
+  </tr>
+  <tr>
+    <td>Inadequate knife type and material</td>
+    <td>• Contact AMN for new knife proposal</td>    
+  </tr>
+  <tr>
+    <td>Rounded production holes</td>
+    <td>• Dismount the die plate and send to AMN for expertise and maintenance
+   </td> 
+     </tr>
+  </tr>
+    <tr>
+    <td>Damaged cutting face</td>
+    <td>• Dismount the die plate and send to AMN for expertise and maintenance</td>
+     </tr>
+  </tr>
+    <tr>
+    <td>Cutting face with cavitation damage</td>
+    <td> • Dismount the die plate and send to AMN for expertise and maintenance<br><br>
+    • Decrease knife rotation speed (according to recommended maximum knife tip linear speed) and increase water pressure in the water bowl (minimum 2 bar)<br><br>
+    • Consult AMN about CIS device</td>
+     </tr>
+  </tr>
+  <tr>
+    <td>Too high polymer temperature</td>
+    <td>• Decrease polymer temperature</td>
+     </tr>
+  </tr>
+  <tr>
+    <td>Too high die plate temperature</td>
+    <td>• Decrease hot oil / steam temperature</td> 
+     </tr>
+  </tr>
+  <tr>
+    <td>Too high PCW temperature</td>
+    <td>• Decrease PCW temperature</td>  
+     </tr>
+  </tr>
+</table>
+<br>
+
+<span class="anchors" id="D"></span>
+<h5>D. Conforming pellets with pellets stuck together (agglomerates).</h5>
+
+<div class="wrapper_video">
+  <img src="img/pellets/stuck_pellets.png" alt="stuck">
+</div>
+
+This is the case when the agglomerated pellets <u>do not have tails</u>.
+<br>
+<br>
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Lack of PCW around the cutting face and knives</td>
+    <td> • Decrease knife rotation speed (according to recommended maximum knife tip linear speed) and increase water pressure in the water bowl (minimum 2 bar)<br><br>
+    • Contact AMN for hydrodynamic knife design (BMS2 or sword shaped)<br><br>
+    • Consult AMN about CIS device.</td>    
+  </tr>
+  <tr>
+    <td>Too high PCW temperature</td>
+    <td>• Decrease PCW temperature</td>    
+  </tr>
+  <tr>
+    <td>Inadequate knife design</td>
+    <td>• Contact AMN for new knife design (sword shaped for sequential cutting)
+   </td> 
+     </tr>
+  </tr>
+    <tr>
+    <td>Too high polymer temperature</td>
+    <td>• Decrease polymer temperature</td>
+  </tr>
+  </tr>
+    <tr>
+    <td>Too low PCW flow</td>
+    <td>• Increase PCW flow</td> 
+     </tr>
+  </tr>
+  <tr>
+    <td>Pellet stand time in PCW is too short</td>
+    <td> • Increase PCW tubing length<br><br>
+    • Decrease PCW flow</td>  
+     </tr>
+  </tr>
+  <tr>
+    <td>Inadequate die plate design (too short hole to hole distance).</td>
+    <td>• Consult AMN for a new die plate design</td>
+     </tr>
+  </tr>
+</table>
+
+<span class="anchors" id="E"></span>
+<h5>E. Conforming pellets with blocks.</h5>
+
+<div class="wrapper_video">
+  <img src="img/pellets/blocks_pellets.png" alt="blocks">
+</div>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Bad start-up sequence</td>
+    <td>• Modification of start-up sequence (PCW arrives too late)</td>    
+  </tr>
+  <tr>
+    <td>Partial loss of die plate / knives contact</td>
+    <td>• Extruder shutdown, knives cleaning and start-up again with higher forward pressure</td>    
+  </tr>
+  <tr>
+    <td>Lack of PCW around the cutting face and knives</td>
+    <td>• Increase PCW pressure and/or PCW flow</td>   
+  </tr>
+  <tr>
+    <td>Inadequate knife profile</td>
+    <td>• Contact AMN for new knife design</td>  
+  </tr>
+  <tr>
+    <td>Die plate deflection</td>
+    <td>• Dismount the die plate and send to AMN for expertise and maintenance</td>
+  </tr>
+  <tr>
+    <td>Die holder deflection transmitted to the die plate</td>
+    <td>• Dismount the die holder for surface rectification</td>
+  </tr>
+  <tr>
+    <td>Local damage to the die plate cutting face</td>
+    <td>• Dismount the die plate and send to AMN for expertise and maintenance</td>
+  </tr>
+  <tr>
+    <td>Too high knife speed</td>
+    <td>• Reduction of rotation speed in accordance to AMN process guarantee (if any)</td>
+  </tr>
+  <tr>
+    <td>Chipped out knife blades</td>
+    <td>• Knives replacement<br><br>
+    • Check out for any foreign material
+    coming out of the die plate which may
+    have damaged the blades<br><br>
+    • Check out for any rising nib or tile on
+    the die plate cutting face and send the die plate to AMN for expertise and maintenance
+      </td>
+  </tr>
+  <tr>
+    <td>Damaged cutting face</td>
+    <td>• Dismount the die plate and send to AMN for expertise and maintenance</td>
+  </tr>
+  <tr>
+    <td>Polymer build-up on the knife blades</td>
+    <td>• Contact AMN for new knife design</td>
+  </tr>
+</table>
+
+<span class="anchors" id="F"></span>
+<h5>F. Conforming pellets with mini pellets.</h5>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Too low or ineffective die plate heating leading to die plate plugging</td>
+    <td>• Hot oil pump flow and temperature control or steam trap and steam pressure control</td>    
+  </tr>
+  <tr>
+    <td>Too low or ineffective die holder heating leading to die plate plugging</td>
+    <td>• Hot oil pump flow and temperature control or steam trap and steam pressure control</td>    
+  </tr>
+  <tr>
+    <td>Bad start-up procedure</td>
+    <td>• Modification of start-up procedure,<br><br>
+    • Refer to “Customer Process Data”
+    (section 5).</td>   
+  </tr>
+
+  <tr>
+    <td>Too low polymer flow</td>
+    <td>• Increase polymer flow,<br><br>
+• Try to reach nominal polymer flow as
+quickly as possible</td>  
+  </tr>
+
+  <tr>
+    <td>Differences in hole landlength due to die plate deflection or wear</td>
+    <td>• Dismount the die plate and send to AMN for expertise and maintenance</td>
+  </tr>
+
+  <tr>
+    <td>Too low polymer temperature</td>
+    <td>• Increase polymer temperature</td>
+  </tr>
+
+  <tr>
+    <td>Inadequate die plate insulation system</td>
+    <td>• Consult AMN for new insulation system supply (HPG)</td>
+  </tr>
+  <tr>
+    <td>Bad melt homogeneity</td>
+    <td>• Improve melt mixing,<br><br>
+• Add a gear pump to the extruder</td>
+  </tr>
+  <tr>
+    <td>Die plate plugging by foreign objects or pollutions</td>
+    <td>• Dismount the die plate for cleaning</td>
+  </tr>
+</table>
+
+<span class="anchors" id="G"></span>
+<h5>G. Conforming pellets with big pellets.</h5>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Heterogeneous die holder heating</td>
+    <td>• Heating circuit cleaning<br><br>
+    • Inadequate die holder design, consult AMN for R2D2 system</td>    
+  </tr>
+  <tr>
+    <td>Differences in hole landlength due to die plate deflection or wear</td>
+    <td>• Dismount the die plate and send to AMN for expertise and maintenance</td>    
+  </tr>
+  <tr>
+    <td>Differences in production hole diameters</td>
+    <td>• Dismount the die plate and send to AMN for expertise and maintenance</td>   
+  </tr>
+
+  <tr>
+    <td>Partial die plate plugging</td>
+    <td>• Shutdown, purge, start-up again,<br><br>
+    • Refer to “Customer Process Data” (section 5, start-up procedure)<br><br>
+    • Heating circuit cleaning, refer to AMN procedure 75.MOM.01,<br><br>
+    • Increase polymer flow,<br><br>
+    • Die plate fouling, clean the die plate
+    (refer to AMN procedure 75.MOM.02)</td>  
+  </tr>
+
+  <tr>
+    <td>Bad melt homogeneity</td>
+    <td>• Improve melt mixing<br><br>
+• Add a gear pump to the extruder</td>
+  </tr>
+
+  <tr>
+    <td>Too low or ineffective die plate heating</td>
+    <td>• Hot oil pump flow and temperature control or steam trap and steam pressure control
+    </td>
+  </tr>
+</table>
+
+<span class="anchors" id="H"></span>   
+<h5>H. Strings of pellets.</h5>
+Directly related to the formation of pellets with tails (see chapter C).<br>
+
+<div class="wrapper_video">
+<img src="img/pellets/strings_pellets.jpg" alt="strings">
+</div>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Too high knife speed</td>
+    <td>• Decrease knife rotation speed,<br><br>
+    • Use higher number of knives per set</td>    
+  </tr>
+  <tr>
+    <td>Bad cutting face flatness</td>
+    <td>• Dismount the die plate and send to AMN for expertise and maintenance</td>    
+  </tr>
+  <tr>
+    <td>Inadequate knife type and material</td>
+    <td>• Contact AMN for new knife proposal</td>   
+  </tr>
+
+  <tr>
+    <td>Bad die plate / knives contact</td>
+    <td>• Extruder shutdown, knives cleaning and start-up again with higher forward pressure</td>  
+  </tr>
+
+  <tr>
+    <td>Some production holes are not fully covered by the knives</td>
+    <td>• Check pelletizer shaft alignment and integrity and repair if necessary (refer to AMN Instruction Manual section I.4).</td>
+  </tr>
+</table>
+
+<span class="anchors" id="I"></span>
+<h5>I. Long pellets.</h5>
+
+<div class="wrapper_video">
+  <img src="img/pellets/long_pellets.png" alt="long" style="height:500px;">
+</div>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Plugged die plate</td>
+    <td>• Hot oil pump flow and temperature control or steam trap and steam pressure control</td>    
+  </tr>
+  <tr>
+    <td>Bad start-up procedure</td>
+    <td>• Shutdown, purge, start-up again,
+• Refer to “Customer Process Data”
+(section 5)</td>    
+  </tr>
+  <tr>
+    <td>Too low knife speed</td>
+    <td>• Increase knife rotation speed</td>   
+  </tr>
+</table>
+
+<p style="text-align:center;color:#999999;font-weight:700;">Refer to chapter A “Big pellets”.</p>
+
+<span class="anchors" id="J"></span>
+<h5>J. Long, flat and short pellets.</h5>
+This is only observed with very high MI products.<br>
+<br>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Lack of PCW around the cutting face and knives</td>
+    <td>• Increase PCW pressure and/or PCW flow,<br><br>
+    • Consult AMN about CIS device</td>    
+  </tr>
+  <tr>
+    <td>Inadequate knife profile</td>
+    <td>• The knives are too thick, consult AMN for a new knife design</td>    
+  </tr>
+  <tr>
+    <td>Too high knife speed</td>
+    <td>• Decrease knife rotation speed<br><br>
+    • Use higher number of knives per set</td>   
+  </tr>
+  <tr>
+    <td>Too high polymer temperature</td>
+    <td>• Decrease polymer temperature</td>   
+  </tr>
+  <tr>
+    <td>Too high die plate temperature</td>
+    <td>• Decrease hot oil / steam temperature</td>    
+  </tr>
+  <tr>
+    <td>Too low polymer flow</td>
+    <td>• Increase polymer flow</td>    
+  </tr>
+  <tr>
+    <td>Too many open production holes</td>
+    <td>• Partial die plate production holes plugging, refer to AMN procedure 75.MOM.03</td>   
+  </tr>
+  <tr>
+    <td>Too low PCW flow regarding nominal polymer flow</td>
+    <td>• Check required PCW flow</td>   
+  </tr>
+  <tr>
+    <td>Inadequate production hole diameter</td>
+    <td>• Contact AMN for die plate modification or new design proposal</td>   
+  </tr>
+</table>
+
+<span class="anchors" id="K"></span>
+<h5>K. Bubbled pellets.</h5>
+
+<div class="wrapper_video">
+  <img src="img/pellets/bubble_pellets.png" alt="bubble">
+</div>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>PCW or foreign water has entered inside the die plate or extruder body</td>
+    <td>• Extruder degassing <br><br>
+    • Shutdown, purge, start-up again withdelayed PCW supply<br><br>
+    • Refer to “Customer Process Data” (section 5).</td>    
+  </tr>
+</table>
+
+<span class="anchors" id="L"></span>
+<h5>L. Powderformation(fines).</h5>
+
+<div class="wrapper_video">
+  <img src="img/pellets/powder_pellets.png" alt="powder">
+</div>
+
+Often seen during hard grades or peroxided grades pelletizing.<br>
+<br>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Lack of PCW at the cutting face centre</td>
+    <td>• Decrease knife rotation speed<br><br>
+    • Consult AMN for new knife design and CIS system</td>    
+  </tr>
+  <tr>
+    <td>Bad die plate and knives flatness</td>
+    <td>• Check cutting face flatness (see Instruction Manual section I.3.6)<br><br>
+    • Check for knife alignment, refer to AMN Instruction Manual (section I.7)</td>    
+  </tr>
+  <tr>
+    <td>Polymer film formation between cutting face and knives</td>
+    <td>• Check the start-up procedure<br><br>
+    • Increase forward pressure on knives<br><br>
+    • Decrease die plate temperature</td>    
+  </tr>
+  <tr>
+    <td>Bad choice of die plate and knives material</td>
+    <td>• Use a WC die plate with TiC (Nikro 128) blades</td>    
+  </tr>
+  <tr>
+    <td>Bad additive mixing</td>
+    <td>• Improve additive mixing, add a gear pump</td>    
+  </tr>
+</table>
+     
+<p style="text-align:center;color:#999999;font-weight:700;">Refer to chapter C “Conforming pellets with tails”.</p>
+
+<span class="anchors" id="M"></span>
+<h5>M. Sudden loss of cutting ability.</h5>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Uncontrolled knife speed variation</td>
+    <td>• Do not modify rotation speed too quickly to avoid uncontrolled variation of knife contact force<br><br>
+    • Modify by steps of 10 rpm maximum</td>    
+  </tr>
+  <tr>
+    <td>Uncontrolled PCW flow</td>
+    <td>• Check the status of water pump and disk<br><br>
+    • Check that there are no agglomerates in water tubing</td>    
+  </tr>
+  <tr>
+    <td>Knife-holder breakage</td>
+    <td>• Replace knife-holder and check for alignment (refer to Instruction Manual section I.4)</td>    
+  </tr>
+  <tr>
+    <td>Knife breakage</td>
+    <td>• Knives replacement<br><br>
+    • Check for knife alignment, refer to AMN Instruction Manual (section I.7)</td>    
+  </tr>
+  <tr>
+    <td>Not constant knife wear (blunt knives)</td>
+    <td>• Check the knife aspect and apply grinding procedure<br><br>
+    • Check knife and die plate materials compatibility</td>    
+  </tr>
+  <tr>
+    <td>Sudden polymer flow variation</td>
+    <td>• Check the die plate back pressure. If ∆P > ±5 bar, check the powder feeding or look for bad mixing issue</td>    
+  </tr>
+  <tr>
+    <td>Water leak in the extruder</td>
+    <td>• Check the extruder barrels cooling circuit sealing</td>    
+  </tr>
+</table>
+
+<p style="text-align:center;color:#999999;font-weight:700;">Refer to chapter C “Conforming pellets with tails”.<br>
+<br>
+This phenomenon is often noticed when the knives have a long service time or if peroxide injection is used.</p>  
+
+<span class="anchors" id="N"></span>
+<h5>N. Very long wires.</h5>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Inadequate knife and/or knife-holder dimension</td>
+    <td>• Check the knife dimensions according to the cutting face dimensions (knife specification S_0002)</td>    
+  </tr>
+  <tr>
+    <td>Bad die plate / pelletizer alignment</td>
+    <td>• Apply alignment procedure described in the Instruction Manual, section I.6.3</td>    
+  </tr>
+  <tr>
+    <td>Bad knife mounting</td>
+    <td>• Check the knife mounting procedure described in the Instruction Manual, section I.7</td>    
+  </tr>
+  <tr>
+    <td>Broken knife screws</td>
+    <td>• Replace the broken screws and knives</td>    
+  </tr>
+</table> 
+
+<span class="anchors" id="O"></span>
+<h5>O. Melt fracture and shark skin.</h5>
+
+<div class="wrapper_video">
+  <img src="img/pellets/melt_pellets.png" alt="shark">
+</div>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <td style="text-align:center;"><b><i>Potential causes</i></b></td>
+    <td style="text-align:center;"><b><i>Corrective actions</i></b></td>
+  </tr>
+  <tr>
+    <td>Polymer flow exceeds the shear stress limitations of the polymer</td>
+    <td>• Reduce polymer flow<br><br>
+    • Review die plate design with AMN: number of holes and holes profile<br><br>
+    • Adaptation of a R2D2 system</td>    
+  </tr>
+</table>
+<br>
+<div class="wrapper_video">
+  <img src="img/pellets/shark_skin.jpg" alt="shark">
+</div>
+
+</div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+
+        function scrollTo(hash) {
+          location.hash = "#" + hash;
+        }
+
+    </script>
+</body>
+
+</html>

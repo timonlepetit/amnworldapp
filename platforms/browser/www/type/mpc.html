@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="Amn">
+    <meta name="application-name" content="Amn">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="../css/application.css" />
+    <title>Amn App</title>
+</head>
+
+<body>
+<!-- navbar Type -->
+    <nav>
+        <ul>
+            <li><img id="brand" src="../img/brand.png" alt="brand"></li>
+            <li><a href="../index.html">home</a></li><span>/</span>
+            <li><a href="../mecanics.html">Tech & Products</a></li><span>/</span>
+            <li><a href="../about.html">about</a></li><span>/</span>
+            <li><a href="../troubleshooting.html">Trouble Shooting</a></li><span>/</span>
+            <li><a href="../services.html">Services</a></li><span>/</span>
+            <li><a href="../datasheets.html">Datasheets</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper_content">
+        <h1>Die Plates</h1>
+        <div class="wrapper_class">
+            <span><a id="tct" href="#animatedModal"><img src="../img/logos/tct_new.png" alt="tct" style="width:5rem"></a></span>
+            <span><a id="hpg" href="#animatedModal-3"><img src="../img/logos/hpg_new.png" alt="hpg" style="width:8rem"></a></span>
+            <span><a id="api" href="#animatedModal-4"><img src="../img/logos/api_new.png" alt="api" style="width:5rem"></a></span>
+        </div>
+        <br><br>
+        <h1>Knife Holders</h1>
+        <div class="wrapper_class">
+            <span><a id="ace" href="#animatedModal-7"><img src="../img/logos/ace_new.png" alt="ace" style="width:8rem"></a></span>
+        </div>
+        <br><br>
+        <h1>Die Adapters</h1>
+        <div class="wrapper_class">
+            <span><a id="dor" href="#animatedModal-8"><img src="../img/logos/dor.png" alt="dor" style="width:8.5rem"></a></span>
+        </div>
+        <h1>Knives</h1>
+        <div class="wrapper_class">
+            <span><a id="bms" href="#animatedModal-11"><img src="../img/logos/bms_new.png" alt="bms" style="width:8rem"></a></span>
+            <span><a id="smx" href="#animatedModal-12"><img src="../img/logos/smx.png" alt="smx" style="width:8rem"></a></span>
+        </div>
+    </div>
+      
+
+<!--TCT-->
+    <div id="animatedModal">
+        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+        <div  id="btn-close-modal" class="close-animatedModal"> 
+            [ X ]
+        </div>
+            
+        <div class="modal-content">
+            <h1 style="text-align:center;">TCT</h1>
+            <div class="wrapper_video" style="width:600px;margin:3rem auto;">
+                <video controls src="../vid/data/tct.mp4" width="600px;" style="box-shadow: 5px 5px 2px rgba(255, 255, 250, 0.2)" preload poster="../img/black_poster.jpg"></video>
+            </div>
+       </div>
+
+    </div>
+
+<!--HPG-->
+    <div id="animatedModal-3">
+        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+        <div  id="btn-close-modal" class="close-animatedModal-3"> 
+            [ X ]
+        </div>
+            
+        <div class="modal-content">
+            <h1 style="text-align:center;">HPG</h1>
+            <div class="wrapper_data">
+                <img src="../img/data/front_hpg.jpg" alt="hpgf">
+                <br><br>
+                <img src="../img/data/back_hpg.jpg" alt="hpgf">
+            </div>
+            <div class="wrapper_video" style="width:600px;margin:3rem auto;">
+                
+            </div>
+       </div>
+    </div>
+
+<!--API-->
+    <div id="animatedModal-4">
+        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+        <div  id="btn-close-modal" class="close-animatedModal-4"> 
+            [ X ]
+        </div>
+            
+        <div class="modal-content">
+            <h1 style="text-align:center;">API</h1>
+            <div class="wrapper_video" style="width:600px;margin:3rem auto;">
+                <video controls src="../vid/data/api.mp4" width="600px;" style="box-shadow: 5px 5px 2px rgba(255, 255, 250, 0.2)" preload poster="../img/black_poster.jpg"></video>
+            </div>
+       </div>
+    </div>
+    
+<!--ACE-->
+    <div id="animatedModal-7">
+        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+        <div  id="btn-close-modal" class="close-animatedModal-7"> 
+            [ X ]
+        </div>
+            
+        <div class="modal-content">
+            <h1 style="text-align:center;">ACE</h1>
+            <div class="wrapper_video" style="width:600px;margin:3rem auto;">
+                <video controls src="../vid/data/ace_1.mp4" width="600px;" style="box-shadow: 5px 5px 2px rgba(255, 255, 250, 0.2)" preload poster="../img/black_poster.jpg"s></video><br><br>
+            </div>
+       </div>
+    </div>
+
+<!--DOR-->
+    <div id="animatedModal-8">
+        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+        <div  id="btn-close-modal" class="close-animatedModal-8"> 
+            [ X ]
+        </div>
+            
+        <div class="modal-content">
+            <h1 style="text-align:center;">DOR</h1>
+            <div class="wrapper_video" style="width:600px;margin:3rem auto;">
+                <video controls src="../vid/data/dor.mp4" width="600px;" style="box-shadow: 5px 5px 2px rgba(255, 255, 250, 0.2)" preload poster="../img/black_poster.jpg"></video>
+            </div>
+       </div>
+    </div>
+
+<!--BMS-->
+    <div id="animatedModal-11">
+        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+        <div  id="btn-close-modal" class="close-animatedModal-11"> 
+            [ X ]
+        </div>
+            
+        <div class="modal-content">
+            <h1 style="text-align:center;">BMS</h1>
+            <div class="wrapper_data">
+                <img src="../img/data/front_bms.jpg" alt="bmsf">
+                <br><br>
+                <img src="../img/data/back_bms.jpg" alt="bmsf">
+            </div>
+       </div>
+    </div>
+    
+<!--SMX-->
+    <div id="animatedModal-12">
+        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+        <div  id="btn-close-modal" class="close-animatedModal-12"> 
+            [ X ]
+        </div>
+            
+        <div class="modal-content">
+            <h1 style="text-align:center;">SMX</h1>
+            <div class="wrapper_data">
+                <img src="../img/data/front_smx.jpg" alt="smxf">
+                <br><br>
+                <img src="../img/data/back_smx.jpg" alt="smxf">
+            </div>
+       </div>
+    </div>
+
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/animatedModal.min.js"></script>
+        <script>
+
+            //tct
+            $("#tct").animatedModal({
+                modalTarget:'animatedModal',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //how
+            $("#how").animatedModal({
+                modalTarget:'animatedModal-2',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //hpg
+            $("#hpg").animatedModal({
+                modalTarget:'animatedModal-3',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //api
+            $("#api").animatedModal({
+                modalTarget:'animatedModal-4',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //cis
+            $("#cis").animatedModal({
+                modalTarget:'animatedModal-5',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //dcm
+            $("#dcm").animatedModal({
+                modalTarget:'animatedModal-6',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //ace
+            $("#ace").animatedModal({
+                modalTarget:'animatedModal-7',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //dor
+            $("#dor").animatedModal({
+                modalTarget:'animatedModal-8',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //r2d2
+            $("#r2d2").animatedModal({
+                modalTarget:'animatedModal-9',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //sbx
+            $("#sbx").animatedModal({
+                modalTarget:'animatedModal-10',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //bms
+            $("#bms").animatedModal({
+                modalTarget:'animatedModal-11',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //smx
+            $("#smx").animatedModal({
+                modalTarget:'animatedModal-12',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+            //daw
+            $("#daw").animatedModal({
+                modalTarget:'animatedModal-13',
+                animatedOut:'bounceOutDown',
+                color:'#1A1A1A',
+            });
+
+        </script>
+</body>
+
+</html>
