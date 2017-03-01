@@ -110,4 +110,10 @@
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
   </platform>
+  <gap:config-file platform="ios" parent="NSPhotoLibraryUsageDescription" overwrite="true">
+    <string>This is made for sales and technical support on field to help explain the products and technologies</string>
+  </gap:config-file>
+  <gap:config-file platform="ios" parent="NSCameraUsageDescription" overwrite="true">
+    <string>This is made for sales and technical support on field to help explain the products and technologies</string>
+  </gap:config-file>
 </widget>
