@@ -35,7 +35,7 @@ $red_main: #D9534F;
 		// -webkit-box-shadow: 4px 5px 3px 0px rgba(255,255,255,.2);
 		// -moz-box-shadow: 4px 5px 3px 0px rgba(255,255,255,.2);
 		// box-shadow: 4px 5px 3px 0px rgba(255,255,255,.2);
-		font-size: 1.1rem;
+		font-size: 1.5rem;
 		// text-decoration: none;
 		// background-color: #999999;
 		// padding: 1rem 2rem;
@@ -258,13 +258,13 @@ nav{
 				vertical-align: middle;
 				letter-spacing: .1rem;
 				text-transform: uppercase;
-				font-size: .9rem;
-				padding-right: 1.2rem;
+				font-size: .8rem;
+				padding-right: 1.4rem;
 				text-decoration: none;
 				color: #FFFFFF;
 				transition: all .3s ease;
 				&:hover{
-					border-bottom: 2px solid #FFFFFF;
+					// border-bottom: 2px solid #FFFFFF;
 					color: #999999;
 				}
 			}
